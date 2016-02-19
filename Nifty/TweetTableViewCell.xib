@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TweetTableViewCell" customModule="Nifty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="そうや" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNr-mI-gAq">
+                        <rect key="frame" x="8" y="8" width="133" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="EB6-ci-tYt"/>
+                            <constraint firstAttribute="width" constant="133" id="GoY-D7-xdz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="さいこう！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbt-Nb-5il">
+                        <rect key="frame" x="8" y="37" width="304" height="29"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CNr-mI-gAq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="EkD-sl-VqW"/>
+                    <constraint firstItem="CNr-mI-gAq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="FW1-Eh-mwb"/>
+                    <constraint firstItem="dbt-Nb-5il" firstAttribute="top" secondItem="CNr-mI-gAq" secondAttribute="bottom" constant="8" symbolic="YES" id="GXm-4p-HoI"/>
+                    <constraint firstItem="dbt-Nb-5il" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="IB5-Ga-IHw"/>
+                    <constraint firstItem="CNr-mI-gAq" firstAttribute="leading" secondItem="dbt-Nb-5il" secondAttribute="leading" id="aSU-m3-8C1"/>
+                    <constraint firstItem="dbt-Nb-5il" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="umZ-VM-OMt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="CNr-mI-gAq" id="Rl3-1Q-Tex"/>
+                <outlet property="tweetLabel" destination="dbt-Nb-5il" id="at2-MQ-FLY"/>
+            </connections>
+            <point key="canvasLocation" x="478" y="409.5"/>
+        </tableViewCell>
+    </objects>
+</document>
