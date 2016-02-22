@@ -13,7 +13,7 @@ class TImeLineTableViewController: UITableViewController {
     @IBOutlet weak var textField: UITextField!
     // 初めて生成
     let tweetManager = TweetManaer.sharedInstance
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +27,18 @@ class TImeLineTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "投稿", style: .Plain, target: self, action: "post")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logout")
+        tweetManager.fetchAllTweets { () in
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if NCMBUser.currentUser() == nil {
+            performSegueWithIdentifier("modalLoginViewController", sender: self)
+        }
     }
 
     // MARK: - Table view data source
@@ -42,7 +54,7 @@ class TImeLineTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         let tweet = tweetManager.tweets[indexPath.row]
-        cell.nameLabel.text = "そうや"
+        cell.nameLabel.text = tweet.user?.name
         cell.tweetLabel.text = tweet.text
         
         return cell
@@ -56,6 +68,17 @@ class TImeLineTableViewController: UITableViewController {
 
     func post() {
         let tweet = Tweet(text: textField.text!)
-        tweet.save()
+        tweet.save { () -> Void in
+            self.tweetManager.fetchAllTweets { () in
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func logout() {
+        NCMBUser.logOut()
+        // ログアウトすることで端末のセッショントークン向こうになります。
+        // セッショントークンはログアウトしなくてもデフォルトで24時間たつと無効になります。
+        performSegueWithIdentifier("modalLoginViewController", sender: self)
     }
 }

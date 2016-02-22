@@ -17,6 +17,7 @@ class TweetManaer: NSObject {
     
     func fetchAllTweets(callback: () -> Void) {
         let query = NCMBQuery(className: "Tweet")
+        query.includeKey("user")
         query.orderByDescending("createDate")
         query.findObjectsInBackgroundWithBlock { (NSArray objects, NSError error) in
             if error != nil {
@@ -26,8 +27,11 @@ class TweetManaer: NSObject {
                 print("登録件数: \(objects.count)")
                 self.tweets = []
                 for object in objects {
-                    let text = object.objectForKey("text")!
-                    let tweet = Tweet(text: text as! String)
+                    let text = object.objectForKey("text") as! String
+                    let tweet = Tweet(text: text)
+                    let userObjet = object.objectForKey("user") as! NCMBUser
+                    let user = User(name: userObjet.userName!, password: "")
+                    tweet.user = user
                     self.tweets.append(tweet)
                     callback()
                 }

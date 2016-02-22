@@ -14,6 +14,8 @@
 		B365A5761C70BB17007B8477 /* NiftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365A5751C70BB17007B8477 /* NiftyTests.swift */; };
 		B365A5811C70BB17007B8477 /* NiftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B365A5801C70BB17007B8477 /* NiftyUITests.swift */; };
 		B365A58F1C70BBD3007B8477 /* NCMB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B365A58E1C70BBD3007B8477 /* NCMB.framework */; };
+		B36AE3481C7AB5DB007BDBB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AE3471C7AB5DB007BDBB5 /* LoginViewController.swift */; };
+		B36AE34A1C7AB6C0007BDBB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AE3491C7AB6C0007BDBB5 /* User.swift */; };
 		B38DEBEE1C71926300464746 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38DEBEC1C71926300464746 /* TweetTableViewCell.swift */; };
 		B38DEBEF1C71926300464746 /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38DEBED1C71926300464746 /* TweetTableViewCell.xib */; };
 		B38DEBF31C7192C100464746 /* TImeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38DEBF21C7192C100464746 /* TImeLineTableViewController.swift */; };
@@ -53,6 +55,8 @@
 		B365A5821C70BB17007B8477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B365A58E1C70BBD3007B8477 /* NCMB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NCMB.framework; path = ../NCMB/NCMB.framework; sourceTree = "<group>"; };
 		B365A5921C70C3B9007B8477 /* Nifty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Nifty-Bridging-Header.h"; sourceTree = "<group>"; };
+		B36AE3471C7AB5DB007BDBB5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B36AE3491C7AB6C0007BDBB5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B38DEBEC1C71926300464746 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		B38DEBED1C71926300464746 /* TweetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		B38DEBF21C7192C100464746 /* TImeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TImeLineTableViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,22 @@
 			path = NiftyUITests;
 			sourceTree = "<group>";
 		};
+		B36AE3461C7AB5BC007BDBB5 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				B36AE3471C7AB5DB007BDBB5 /* LoginViewController.swift */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		B36AE34B1C7AB6C7007BDBB5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B36AE3491C7AB6C0007BDBB5 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		B38DEBEA1C71909100464746 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +189,7 @@
 		B38DEBF11C71929E00464746 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B36AE3461C7AB5BC007BDBB5 /* Session */,
 				B38DEBF41C7192EC00464746 /* Tweet */,
 			);
 			name = ViewControllers;
@@ -185,6 +206,7 @@
 		B38DEBF51C71931000464746 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B36AE34B1C7AB6C7007BDBB5 /* User */,
 				B38DEBFA1C71935F00464746 /* Tweet */,
 			);
 			name = Models;
@@ -331,11 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36AE3481C7AB5DB007BDBB5 /* LoginViewController.swift in Sources */,
 				B38DEBF91C71935700464746 /* TweetManaer.swift in Sources */,
 				B38DEBF31C7192C100464746 /* TImeLineTableViewController.swift in Sources */,
 				B365A5611C70BB17007B8477 /* AppDelegate.swift in Sources */,
 				B38DEBEE1C71926300464746 /* TweetTableViewCell.swift in Sources */,
 				B38DEBF71C71933500464746 /* Tweet.swift in Sources */,
+				B36AE34A1C7AB6C0007BDBB5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

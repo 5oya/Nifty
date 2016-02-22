@@ -11,19 +11,21 @@ import UIKit
 class Tweet: NSObject {
     
     var text: String
+    var user: User?
     
     init(text: String) {
         self.text = text
     }
     
-    func save() {
+    func save(callback: () -> Void) {
         let tweetObject = NCMBObject(className: "Tweet")
-        tweetObject.setObject(text, forKey: "tweet")
+        tweetObject.setObject(text, forKey: "text")
+        tweetObject.setObject(NCMBUser.currentUser(), forKey: "user")
         tweetObject.saveInBackgroundWithBlock { (NSError error) in
             if error != nil {
                 return
             } else {
-                print("保存完了！")
+                callback()
             }
         }
     }

@@ -40,11 +40,29 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="textField" destination="2tY-ul-DH4" id="gL2-Vk-7lT"/>
+                        <segue destination="if9-34-EVB" kind="presentation" identifier="modalLoginViewController" id="fNH-Xj-ZOm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpQ-YR-Wvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136.25" y="385.5"/>
+            <point key="canvasLocation" x="1010.5" y="385.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MG6-OR-KQv">
+            <objects>
+                <navigationController id="if9-34-EVB" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kVU-QJ-ipN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wau-nC-bA6" kind="relationship" relationship="rootViewController" id="0fR-DZ-c8Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oaf-WO-nCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.5" y="1177.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rw3-Fv-sfQ">
@@ -64,6 +82,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="80u-q7-su9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="493" y="386"/>
+        </scene>
+        <!--Login/Sign Up-->
+        <scene sceneID="uFx-pb-wKb">
+            <objects>
+                <viewController id="Wau-nC-bA6" customClass="LoginViewController" customModule="Nifty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zGB-aq-Ilm"/>
+                        <viewControllerLayoutGuide type="bottom" id="pyp-Vd-CYH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UN1-4V-Ek1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-au-UPe">
+                                <rect key="frame" x="20" y="117" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8A-w6-AUe">
+                                <rect key="frame" x="20" y="168" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a9-SN-K0n">
+                                <rect key="frame" x="20" y="245" width="156" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.40117069285287998" blue="0.26671081820056919" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapLoginButton:" destination="Wau-nC-bA6" eventType="touchUpInside" id="UJ1-Qm-VVJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-Gd-0iS">
+                                <rect key="frame" x="199" y="245" width="156" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.40117069285287998" blue="0.26671081820056919" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSignUpButton:" destination="Wau-nC-bA6" eventType="touchUpInside" id="GOc-zA-5fj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login/Sign Up" id="Xig-j6-Mzd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameField" destination="QeM-au-UPe" id="6AI-vI-3rC"/>
+                        <outlet property="passwordField" destination="b8A-w6-AUe" id="dIX-gU-S1K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OiI-Va-hgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477.5" y="1177.5"/>
         </scene>
     </scenes>
 </document>
