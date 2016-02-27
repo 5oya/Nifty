@@ -75,10 +75,10 @@ class TImeLineTableViewController: UITableViewController {
         }
     }
     
+    // ログアウトすることで端末のセッショントークンが無効になります。
+    // セッショントークンはログアウトしなくてもデフォルトで24時間たつと無効になります。
     func logout() {
         NCMBUser.logOut()
-        // ログアウトすることで端末のセッショントークン向こうになります。
-        // セッショントークンはログアウトしなくてもデフォルトで24時間たつと無効になります。
         performSegueWithIdentifier("modalLoginViewController", sender: self)
     }
 }

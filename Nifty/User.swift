@@ -17,8 +17,6 @@ class User: NSObject {
         self.password = password
     }
     
-    
-    // MEMO: modelはデータだけ見やすくしたいので、モデルに処理を書くのは美しくない気がする
     func signUp(callback: (message: String?) -> Void) {
         let user = NCMBUser()
         user.userName = self.name
@@ -29,7 +27,6 @@ class User: NSObject {
     }
     
     func login(callback: (message: String?) -> Void) {
-        // ログインをサーバーに要求すると、端末独自のセッショントークンが発行されてセッションとしてログイン情報とともに保持される
         NCMBUser.logInWithUsernameInBackground(self.name, password: self.password) { (NCMBUser user, NSError error) in
             callback(message: error?.userInfo["NSLocalizedDescription"] as? String)
         }
